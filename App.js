@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Platform, Image, Text, View, ScrollView, Button } from 'react-native';
 
 import firebase from 'react-native-firebase';
+import LinearGradient from 'react-native-linear-gradient';
 
 
 export default class App extends React.Component {
@@ -28,7 +29,11 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <ScrollView>
+      <LinearGradient
+            colors={['#4c669f', '#3b5998', '#192f6a']}
+            style={styles.linearGradient}
+            start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }}>
+            <ScrollView>
         <View style={styles.container}>
           <Image source={require('./assets/ReactNativeFirebase.png')} style={[styles.logo]}/>
           <Text style={styles.welcome}>
@@ -74,6 +79,8 @@ export default class App extends React.Component {
           </View>
         </View>
       </ScrollView>
+        </LinearGradient>
+      
     );
   }
 }
@@ -83,7 +90,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+
   },
   logo: {
     height: 120,
@@ -113,5 +120,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 4,
     textAlign: 'center',
-  }
+  },
+  linearGradient: {
+    flex: 1,
+},
 });
