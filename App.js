@@ -3,6 +3,7 @@ import { StyleSheet, Platform, Image, Text, View, ScrollView, Button } from 'rea
 
 import firebase from 'react-native-firebase';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 
 export default class App extends React.Component {
@@ -70,6 +71,7 @@ export default class App extends React.Component {
             {firebase.notifications.nativeModuleExists && <Text style={styles.module}>notifications()</Text>}
             {firebase.perf.nativeModuleExists && <Text style={styles.module}>perf()</Text>}
             {firebase.storage.nativeModuleExists && <Text style={styles.module}>storage()</Text>}
+            <Icon name="user" size={20}  />
             <Button
                 onPress={this.teste}
                 title="Learn More"
